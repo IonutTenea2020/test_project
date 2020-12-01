@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th> CIF </th>
+            <th> Nume </th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${clienti.empty}">
+            <td colspan="2"> No Client Available </td>
+        </tr>
+        <tr th:each="clt: ${clienti}">
+            <td><span th:text="${clt.id}"> CIF </span></td>
+            <td><span th:text="${clt.Nume}"> Nume  </span></td>
+        </tr>
+    </tbody>
+</table>
+</body>
