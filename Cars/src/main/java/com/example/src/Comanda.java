@@ -12,13 +12,16 @@ public class Comanda {
 	private String data;
 	
 	
+	public Comanda() {
+		super();
+	}
+
 	public Comanda(int id, int nr, String data) {
 		super();
 		this.id = id;
 		this.nr = nr;
 		this.data = data;
-		this.client = client;
-		this.fact = fact;
+
 	}
 	
 	public int getId() {

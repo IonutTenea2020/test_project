@@ -5,20 +5,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<form action="#" th:action="@{/creareClient}" th:object="${client}" method="post">
+<form action="#" th:action="@{/creareComanda}" th:object="${comanda}" method="post">
     <fieldset>
         <input type="submit" id="submitButton" th:value="Save">
         <table>
             <thead>
                  <tr>
 		            <th> Id </th>
-		            <th> Nume </th>
+		            <th> Numar </th>
+		            <th> Data </th>
 		           </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><input th:field="*{id}" /></td>
-                    <td><input th:field="*{nume}" /></td>
+                    <td><input th:field="*{nr}" /></td>
+                    <td><input th:field="*{data}" /></td>
                 </tr>
             </tbody>
         </table>

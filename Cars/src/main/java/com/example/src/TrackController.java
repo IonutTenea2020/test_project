@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -42,15 +43,26 @@ public class TrackController {
 		model.addAttribute("client", new Client());		
 		return "adaugareClient";
 	}
-	@PostMapping("/creareClienti")
+	@PostMapping("/creareClient")
 	public String creareClient(@ModelAttribute Client client, Model model) {
 		model.addAttribute("client", client);
 		repoClt.save(client);
-		return "redirect:clienti";
+		return "redirect:adaugareClient";
 	}
 	@GetMapping("/clienti")
 	public String clienti(Model model) {
 		model.addAttribute("clienti", repoClt.findAll());
 		return "clienti";
 	}
-}
+	@GetMapping("/adaugareComanda")
+	public String adaugareComanda(Model model) {
+		model.addAttribute("comanda", new Comanda());		
+		return "adaugareComanda";
+	}
+	@PostMapping("/creareComanda")
+	public String creareComanda(@ModelAttribute Comanda comanda, Model model) {
+		model.addAttribute("comanda", comanda);
+		repoCom.save(comanda);
+		return "redirect:adaugareComanda";
+	}
+	}
